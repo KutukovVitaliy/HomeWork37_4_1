@@ -11,10 +11,12 @@ class CalcMainWindow : public QMainWindow{
     Q_OBJECT
 public:
     CalcMainWindow(QWidget* parent = nullptr) : QMainWindow(parent){}
-    QLineEdit* resultLineEdit = nullptr;
+    QLineEdit *resultLineEdit = nullptr, *firstLineEdit = nullptr, *secondLineEdit = nullptr;
+
 public slots:
     void plus(){
-        resultLineEdit->setText("QWERTY");
+        resultLineEdit->setText(QString::number(firstLineEdit->text().toFloat() + secondLineEdit->text().toFloat()));
+
     };
     void minus(){
 
@@ -25,5 +27,6 @@ public slots:
     void div(){
 
     }
+
 };
 #endif //HOMEWORK37_4_1_CALCMAINWINDOW_H

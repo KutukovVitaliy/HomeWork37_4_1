@@ -41,6 +41,9 @@
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="inputMask">
+           <string/>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -67,6 +70,9 @@
            <font>
             <pointsize>16</pointsize>
            </font>
+          </property>
+          <property name="inputMask">
+           <string/>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
