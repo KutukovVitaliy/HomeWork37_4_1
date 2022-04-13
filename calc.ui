@@ -82,13 +82,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="resultLineEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+       <widget class="QLabel" name="resultLabel">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -99,6 +93,9 @@
          <font>
           <pointsize>16</pointsize>
          </font>
+        </property>
+        <property name="text">
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

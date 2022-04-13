@@ -6,6 +6,7 @@
 #define HOMEWORK37_4_1_CALCMAINWINDOW_H
 #include <QMainWindow>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QLabel>
 #include <exception>
 
 class DivByZeroException : public std::exception{
@@ -19,21 +20,22 @@ class CalcMainWindow : public QMainWindow{
     Q_OBJECT
 public:
     CalcMainWindow(QWidget* parent = nullptr) : QMainWindow(parent){}
-    QLineEdit *resultLineEdit = nullptr, *firstLineEdit = nullptr, *secondLineEdit = nullptr;
+    QLabel *resultLabel = nullptr;
+    QLineEdit *firstLineEdit = nullptr, *secondLineEdit = nullptr;
 
 public slots:
     void plus(){
         float result = firstLineEdit->text().replace(",", ".").toFloat() + secondLineEdit->text().replace(",", ".").toFloat();
-        resultLineEdit->setText(QString::number(result).replace(".", ","));
+        resultLabel->setText(QString::number(result).replace(".", ","));
 
     };
     void minus(){
         float result = firstLineEdit->text().replace(",", ".").toFloat() - secondLineEdit->text().replace(",", ".").toFloat();
-        resultLineEdit->setText(QString::number(result).replace(".", ","));
+        resultLabel->setText(QString::number(result).replace(".", ","));
     }
     void mul(){
         float result = firstLineEdit->text().replace(",", ".").toFloat() * secondLineEdit->text().replace(",", ".").toFloat();
-        resultLineEdit->setText(QString::number(result).replace(".", ","));
+        resultLabel->setText(QString::number(result).replace(".", ","));
     }
     void div(){
 
@@ -41,10 +43,10 @@ public slots:
             float second = secondLineEdit->text().replace(",", ".").toFloat();
         try {
             float result = Division(first, second);
-            resultLineEdit->setText(QString::number(result).replace(".", ","));
+            resultLabel->setText(QString::number(result).replace(".", ","));
         }
         catch (DivByZeroException ex) {
-            resultLineEdit->setText(ex.what());
+            resultLabel->setText(ex.what());
         }
     }
 

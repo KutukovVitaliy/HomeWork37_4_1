@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     validator->setNotation(QDoubleValidator::StandardNotation);
     calc.firstLineEdit->setValidator(validator);
     calc.secondLineEdit->setValidator(validator);
-    window.resultLineEdit = calc.resultLineEdit;
+    window.resultLabel = calc.resultLabel;
     window.firstLineEdit = calc.firstLineEdit;
     window.secondLineEdit = calc.secondLineEdit;
     window.resize(200, 100);
